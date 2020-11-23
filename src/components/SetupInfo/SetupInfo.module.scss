@@ -1,0 +1,49 @@
+@import '../../commons/styles/defaults/colors';
+@import '../../commons/styles/defaults/typography';
+
+.setupInfo {
+  background: var(--app-primary-background-color);
+  bottom: 0;
+  box-sizing: border-box;
+  left: 0;
+  margin: 0;
+  padding: ($base-design-unit / 2) ((2 * $base-design-unit) + $base-design-unit / 2) $base-design-unit;
+  position: fixed;
+  width: 100%;
+}
+
+.max {
+  color: $white;
+  font-size: $font-size-mid;
+  font-weight: $font-weight-bold;
+}
+
+.button {
+  appearance: none;
+  background: var(--app-secondary-color);
+  border-radius: $base-design-unit;
+  border: 0;
+  color: $white;
+  cursor: pointer;
+  outline: none;
+  padding: $base-design-unit (3 * $base-design-unit);
+
+  &[disabled] {
+    background: $gray;
+    opacity: 0.2;
+    pointer-events: none;
+
+    transition: opacity .1s ease-in, background .1s ease-in;
+  }
+
+  &:not(:last-child) { margin-right: $base-design-unit; }
+
+  &[data-clear-all],
+  &[data-select-all] { background: #e88777; }
+}
+
+.options {
+  align-items: center;;
+  display: flex;
+  justify-content: space-between;
+}

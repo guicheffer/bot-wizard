@@ -1,0 +1,65 @@
+@import './defaults/breakpoints';
+@import './defaults/colors';
+@import './defaults/typography';
+
+@import './defaults/mixins/fade-rule'; // TODO: I know, this could be extracted to somewhere else - I hate it honestly hahaha :P
+
+@mixin selection-colors {
+  background-color: var(--app-primary-color);
+  color: $white;
+}
+
+::-moz-selection { @include selection-colors; }
+::selection { @include selection-colors; }
+
+body,
+a, a:hover, a:active {
+  color: $white;
+  text-decoration: none;
+}
+
+a, a:hover, a:active { color: var(--app-secondary-color); }
+
+body {
+  background-color: var(--app-primary-background-color);
+  cursor: default;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+ *
+ * Please test that on mobile!
+ *
+ * I swear I did my best on the responsive skills / overall UX adaptions! haha :)
+ *
+*/
+
+#bot-wizard-app {
+  box-sizing: border-box;
+  height: 99.8vh;
+  padding: 1vh;
+
+  .container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 90%;
+
+    @media (max-width: $screen-sm-max) {
+      margin: 0;
+      padding: 0 $base-design-unit;
+      width: 100%;
+    }
+  }
+
+  .row {
+    width: 100%;
+  }
+}

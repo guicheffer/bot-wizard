@@ -1,0 +1,42 @@
+@import '../../../commons/styles/defaults/colors';
+@import '../../../commons/styles/defaults/typography';
+
+.intentsList {
+  margin-bottom: (2 * 8) * $base-design-unit;
+  min-height: 70vh;
+  position: relative;
+}
+
+.loading {
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10vh;
+}
+
+.explanation {
+  background: var(--app-primary-background-color);
+  border-radius: $base-design-unit;
+  border: 1px dashed;
+  color: $gray;
+  margin-top: 0;
+  padding: $base-design-unit;
+  position: sticky;
+  text-align: justify;
+  top: $base-design-unit;
+  z-index: 1;
+}
+
+.intentsItem {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+
+  li:not(:last-child) {
+    margin-bottom: ($base-design-unit * 2);
+  }
+}
